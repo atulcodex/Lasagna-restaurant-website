@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasagna Restaurant theme Documentation</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        body{
+            background-color: #f3f5f9;
+        }
+
+        .preview{
+            margin: 20px;
+        }
+
+        .preview img
+        {
+            width: 100%;
+            height: auto;
+        }
+
+        h3{
+            color: black;
+            text-decoration: underline;
+        }
+
+        .info{
+            padding-top: 16px;
+        }
+
+        .info img{
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+        .wrapper{
+            display: flex;
+            position: relative;
+        }
+
+        .wrapper .sidebar{
+            width: 200px;
+            height: 100%;
+            background: #007BFF;
+            padding: 30px 0px;
+            position: fixed;
+        }
+
+        .wrapper .sidebar h2{
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .wrapper .sidebar ul li{
+            padding: 15px;
+            border-bottom: 1px solid #bdb8d7;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }    
+
+        .wrapper .sidebar ul li a{
+            color: #bdb8d7;
+            display: block;
+        }
+
+        .wrapper .sidebar ul li a .fas{
+            width: 25px;
+        }
+
+        .wrapper .sidebar ul li:hover{
+            background-color: #fff;
+        }
+            
+        .wrapper .sidebar ul li:hover a{
+            color: #007BFF;
+        }
+        
+        .wrapper .sidebar .social_media{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .wrapper .sidebar .social_media a{
+            display: block;
+            width: 40px;
+            background: #fff;
+            height: 40px;
+            line-height: 45px;
+            text-align: center;
+            margin: 0 5px;
+            color: #007BFF;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .wrapper .main_content{
+            width: 100%;
+            margin-left: 200px;
+        }
+
+        .wrapper .main_content .header{
+            padding: 20px;
+            background: #fff;
+            color: #717171;
+            border-bottom: 1px solid #e0e4e8;
+        }
+
+        .wrapper .main_content .info{
+            margin: 20px;
+            color: #717171;
+            line-height: 25px;
+        }
+
+        .wrapper .main_content .info div{
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 900px;
+            margin: 75px auto 0;
+            background-color: #fff;
+            box-shadow: 0 3px 30px rgba(0, 0, 0, .14);
+            color: #444;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .card .card-header {
+            position: relative;
+            height: 48px;
+        }
+
+        .card .card-header .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 1000px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 6px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        }
+
+        .card .card-body {
+            padding: 10px 40px;
+        }
+
+        .card .card-body .full-name {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 10px 0 0;
+        }
+
+        .card .card-body .username {
+            font-size: 13px;
+            color: #777;
+            margin: 5px 0 0;
+        }
+
+        .card .card-body .city {
+            font-weight: 500;
+            margin: 10px 0 0;
+        }
+
+        .card .card-body .desc {
+            line-height: 24px;
+        }
+
+        .card .social-icon {
+            font-size: 18px;
+            margin: 0 7px;
+        }
+
+        .card .social-icon.facebook {
+            color: #3b5999;
+        }
+
+        .card .social-icon.twitter {
+            color: #55acee;
+        }
+
+        .card .social-icon.tumblr {
+            color: #34465d;
+        }
+
+        .card .social-icon.youtube {
+            color: #cd201f;
+        }
+
+        .card .social-icon.linkedin {
+            color: #0077b5;
+        }
+
+        .card .social-icon.google-plus {
+            color: #dd4b39;
+        }
+
+        .card .social-icon.google-plus {
+            color: #000;
+        }
+
+        .card .card-footer {
+            display: table;
+            width: 100%;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .card .card-footer .col {
+            display: table-cell;
+            padding: 5px 10px;
+            font-size: 15px;
+        }
+
+        .card .card-footer .count {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .vr {
+            border-right: 1px solid #e6e6e6;
+        }
+
+        @media (max-height: 500px){
+            .social_media{
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            .card {
+                width: 96%;
+            }
+
+            .card .card-body {
+                padding: 10px 20px;
+            }
+
+            .card .card-footer .col {
+                padding: 0 10px;
+            }
+
+            .card .card-footer .count {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>L. S. A. G. N. A.</h2>
+            <ul>
+                <li><a href="#header">🧔 Header</a></li>
+                <li><a href="#hero">🦸‍♂️ Hero Section</a></li>
+                <li><a href="#second">👩‍❤️‍👩 Second Section</a></li>
+                <li><a href="#footer">🐾 Footer</a></li>
+                <li><a href="#author">👨‍💻 Author</a></li>
+            </ul> 
+            <div class="social_media">
+              <a href="https://atulprajapati.in/" target="_blank"><i class="fas fa-globe"></i></a>
+              <a href="https://twitter.com/atuljustano" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/AtulCodex" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/atulcodex/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="main_content">
+            <div class="header">Welcome to Lasagna theme!! Have a nice day 🌺🌹</div>  
+
+            <div class="preview">
+                <img src="Lasagna restaurant theme.jpg" alt="Lasagna Restaurant theme">
+                <p class="about">
+                    Lasagna is a clean and modern HTML, CSS and Javascript theme for cafe & restaurant and any food related business website built with the core html, css and javascript tech stacks. Lasagna theme support responsive layout so it looks greate on all devices. It has predefined styling for modern cuisine restaurant, Asian food restaurant and elegant food restaurant which is now ready for sushi bar restaurant 🍣🍥 but you can customize it according to your business and restaurant.
+                </p>
+            </div> 
+
+            <div class="info" id="header">
+                <h3>Header 🧔</h3>
+                <h6>Header --> Logo & Menu</h6>
+                <img src="Lasagna restaurant theme header.jpg" alt="Lasagna restaurant theme header">
+                <p>
+                    In Lasagna theme if you want to change the logo you can simply search for logo section every section is well commented and highlighted for your convenience. See the code below.
+                </p>
+                <br>
+                <h6>Header --> Logo --> HTML</h6>
+                <img src="Lasagna restaurant theme header code.png" alt="Lasagna restaurant theme header code">
+                <p>
+                    This is the HTML code for Logo here you can replace your logo. We are not using any css styling for logo so you just need to put your logo size width = 264px and height 78px like current.
+                </p>
+                <br>
+                <h6>Header --> Menu --> HTML</h6>
+                <img src="Lasagna restaurant theme menu code.png" alt="Lasagna restaurant theme menu code">
+                <p>
+                    This is the HTML code for menu you can change it according to you.
+                </p>
+            </div>
+
+            <hr><br><br>
+
+            <div class="info" id="hero">
+                <h3>Hero section 🦸‍♂️</h3>
+                <img src="Lasagna theme hero section.jpg" alt="Lasagna restaurant theme hero section">
+                <p>
+                    This is the elegent looking hero section of our Lasagna restaurant theme. In this section doing changes is very simple no big deal but if you will any issues you can simply suit me support mail on <a href="mailto:atulkprajapati2000@gmail.com">📪 atulkprajapati2000@gmail.com</a>
+                </p>
+                <br>
+                <h6>Hero section --> HTML</h6>
+                <img src="Lasagna theme hero section code.png" alt="Lasagna restaurant theme hero section code">
+                <p>
+                    This is the HTML code for Lasagna restaurant theme again no any rocket science just text is here which you can change and if you want to make changes in styling part so simply you can search for hero section in style.css file here you will find well commented code so you can simply change anything
+                </p>
+            </div>
+
+            <hr><br><br>
+
+            <div class="info" id="second">
+                <h3>second section 👩‍❤️‍👩</h3>
+                <img src="Lasagna restaurant theme second section.jpg" alt="Lasagna restaurant theme second section">
+                <p>
+                    In this section we are using two columns for our story text and another one for beautifull image.
+                </p>
+                <br>
+                <h6>second section (About us) --> HTML</h6>
+                <img src="Lasagna restaurant theme second section code.png" alt="Lasagna restaurant theme second section code">
+                <p>
+                    In this code you will find entire code for about us section nothing confusing just text and image is here and if you want to make changes in styling part of the code then you can find css part of this section just press <strong>ctrl</strong> + <strong>f</strong> in your device and find for our story section and then you can make changes according to you.
+                </p>
+                <br>
+                <p>
+                    Like this one you can find and make changes in any section of the website and again if you will find any difficulty you can reach out to me for support, I love to help you 😍
+                </p>
+            </div>
+
+            <hr><br><br>
+
+            <div class="info" id="footer">
+                <h3>Footer 🐾</h3>
+                <img src="Lasagna restaurant theme footer.jpg" alt="Lasagna restaurant theme footer">
+                <p>
+                    In this section you can make changes in footer which is containe little bit of about us, social media links and one dummy mail subscription box.
+                </p>
+                <br>
+                <h6>Footer --> HTML</h6>
+                <img src="Lasagna restaurant theme footer code.png" alt="Lasagna restaurant theme footer code">
+                <p>
+                    This is the footer html code part of the Lasagna restaurant theme here you can make changes in your about us text, social media links and if you know any backend language the you can make this mail subscription box either you can remove it.
+                </p>
+            </div>
+
+            <hr><br><br>
+
+            <div class="info" id="author">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="Atul Prajapati.jpeg" alt="Atul Prajapati" class="profile-img">
+                    </div>
+                    <div class="card-body">
+                        <p class="full-name">Atul Prajapati</p>
+                        <p class="username">@atulcodex</p>
+                        <p class="city">India 🏔</p>
+                        <p class="desc">
+                            Hi, I am a Creative Web Designer/Developer and E-commerce specialist 👨🏽‍💻
+                            Helping small and medium size businesses to grow online with my creative skills. I have dirty my hand with coding at the age of 14 & learned programming from online platforms like udemy & Udacity and also contribute free source code on codepen GitHub and Codesand Box and i always like to create something on my own which looks Great and feel Awesome, Find out some example here on my site.
+                            I am in this field since last 4+ years so it would be great if i get a chance to prove myself to provide you with better quality service. I have experience working with local clients along with clients from all around the world. 
+                        </p>
+                        <p>
+                            <a href="https://www.facebook.com/atul.prajapati.5492216" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/atuljustano" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://atulcodex.tumblr.com/" target="_blank" class="social-icon tumblr"><i class="fab fa-tumblr"></i></a>
+                            <a href="https://www.youtube.com/channel/UCf-KfxuY8PZBSD_8RW2nYsw?view_as=subscriber" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/in/atul-prajapati-05420916a/" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/atulcodex/" target="_blank" class="social-icon google-plus"><i class="fab fa-instagram"></i></a>
+                            <a href="https://dev.to/atulcodex/" target="_blank" class="social-icon dev"><i class="fab fa-dev"></i></a>
+                            <a href="https://atulprajapati.in" target="_blank" class="social-icon dev"><i class="fas fa-globe"></i></a>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col vr">
+                            <p>
+                                <a href="https://api.whatsapp.com/send?phone=917303033651&text=Hi%20Atul,%20I%20want%20your%20help%20in%20Lasagna%20theme%20%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB" target="_blank">
+                                    <span class="count"><i class="fab fa-whatsapp"></i></span> WhatsApp Support
+                                </a>
+                                </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                <a href="mailto:atulkprajapati2000@gmail.com" target="_blank">
+                                    <span class="count"><i class="fas fa-envelope-open-text"></i></span> Mail Support
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr><br><br>
+
+            <div class="info" id="header">
+                <h3>Color Font button and other similar things 💚</h3>
+                <h2 style="color: red;">NOTE: Here we are using Global styling so we can change anything from one place like button color, font size, font color, etc</h2>
+                <br>
+                <h4>And you can Download free version of this theme <a href="https://imojo.in/2hnrreb" target="_blank">Download Now</a></h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="atulcodex" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a coffee!" data-color="#5F7FFF" data-position="right" data-x_margin="18" data-y_margin="18"></script>
