@@ -7,16 +7,30 @@
     <meta name="keywords" content="restaurants theme, bistrots theme, sushi bar theme, fast food theme, casual dining theme, fast casual theme, buffet theme, pop-up restaurants theme">
     <meta name="author" content="Atul Prajapati | Freelance web developer">
     <title>Lasagna Restaurant theme</title>
+
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="img/Lasagna theme favicon.png"/>
+
     <!-- FontAwesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
     <!--Scroll reveal CDN-->
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- JQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body >
+    <!-- Back to top button -->
+    <button id="topBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Back to top button -->
+
     <!-- Spinner Loader starts from here 🍎 -->
     <div class="spinner-wrapper">
         <div class="spinner">
@@ -244,5 +258,25 @@
 
     <!-- External Javascript -->
     <script src="main.js"></script>
+
+    <script>
+    // Back to top button
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if($(this).scrollTop() > 40)
+        {
+          $('#topBtn').fadeIn();
+        }
+        else
+        {
+          $('#topBtn').fadeOut();
+        }
+      });
+      
+       $("#topBtn").click(function(){
+          $('html, body').animate({scrollTop: 0},800);
+       });             
+    });
+    </script>
 </body>
 </html>

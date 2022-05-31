@@ -33,6 +33,29 @@ body
     overflow-x: hidden;
 }
 
+/*--------- Back to top button ----------------*/
+#topBtn
+{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  background: var(--secondary-font-color);
+  color: #white;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#topBtn i
+{
+    color: #ffffff;
+}
+/*--------- Back to top button ----------------*/
+
 section
 {
     padding: 3.9rem 0;

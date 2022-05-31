@@ -49,3 +49,5 @@ sr.reveal('.animate-bottom', {
     delay: 600
 });
 // Scroll reveal ends from here 💚
+
+
